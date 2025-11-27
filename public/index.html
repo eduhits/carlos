@@ -1252,54 +1252,6 @@ function closePlayerModal() {
   videoPlayer.src = '';
   document.body.style.overflow = 'auto';
 }
-  
-    // Script do sistema de anúncios
-    (function () {
-      const startBtn = document.getElementById('start-button');
-      const adBlock = document.getElementById('ad-block');
-      const countdownText = document.getElementById('countdown-text');
-      const closeX = document.getElementById('close-x');
-      const wallContainer = document.getElementById('wall-container');
-      const initialText = document.getElementById('initial-text');
-
-      startBtn.addEventListener('click', () => {
-        startBtn.style.display = 'none';
-        initialText.style.display = 'none';
-
-        adBlock.style.display = 'block';
-        countdownText.style.display = 'block';
-
-        let secondsLeft = 3;
-        countdownText.textContent = `O seu prêmio libera em ${secondsLeft}`;
-
-        const countdownInterval = setInterval(() => {
-          secondsLeft--;
-          if (secondsLeft > 0) {
-            countdownText.textContent = `O seu prêmio libera em ${secondsLeft}`;
-          } else {
-            clearInterval(countdownInterval);
-            countdownText.style.display = 'none';
-            closeX.style.display = 'block';
-          }
-        }, 1000);
-      });
-
-      closeX.addEventListener('click', () => {
-        if (wallContainer) wallContainer.remove();
-      });
-
-      closeX.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          closeX.click();
-        }
-      });
-    })();
-  // Quando clicar no botão, desbloqueia a tela
-  document.getElementById("floating-center-btn").addEventListener("click", function() {
-    document.getElementById("screen-locker").style.display = "none";
-  });
-
   </script>
 </body>
 </html>
