@@ -1,0 +1,15 @@
+{
+  "name": "nflix",
+  "version": "1.0.0",
+  "description": "NFLIX - Plataforma de streaming",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'No build process needed for static site' && exit 0"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  },
+  "keywords": ["streaming", "movies", "tv-shows"],
+  "author": "NFLIX Team",
+  "license": "MIT"
+}
