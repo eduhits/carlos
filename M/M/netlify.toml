@@ -1,0 +1,42 @@
+[build]
+  publish = "public"
+  functions = "functions"
+
+[build.environment]
+  TMDB_API_KEY = "b73f5479e8443355e40462afe494fc52"
+  TMDB_LANG = "pt-BR"
+  PLAYER_URL_MOVIE = "https://playerflixapi.com/filme/"
+  PLAYER_URL_TV = "https://playerflixapi.com/serie/"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/.netlify/functions/serve-script"
+  to = "/index.html"
+  status = 302
+  force = true
+
+# Configurações de cache
+[[headers]]
+  for = "/.netlify/functions/api"
+  [headers.values]
+    "Cache-Control" = "public, max-age=3600"
+    "Access-Control-Allow-Origin" = "*"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    "Cache-Control" = "public, max-age=86400"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    "Cache-Control" = "public, max-age=86400"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    "Cache-Control" = "public, max-age=0, must-revalidate"
